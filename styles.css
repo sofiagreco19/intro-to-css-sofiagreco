@@ -1,7 +1,7 @@
-/* ----- TO DO: ADD CSS RESET CODE HERE ----- */
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+/*
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -13,75 +13,80 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-
-/* ----- GLOBAL/MOBILE CUSTOM STYLES START HERE ----- */
-/* ----- ROOT ELEMENT FOR CSS VARIABLES ----- */
+/* GLOBAL/CUSTOM STYLES */
 :root{
-    --wht: #f2f2f2;
+    /* Colors from Colormind.io */
+    --red: #ED4A3C;
+    --gold: #FDCB13;
+    --lime: #B9C44C;
+    --sky: #2DADAC;
+    --blue: #193259;
+
+    /* Neutrals */
+    --off-wht: #fefdf7;
     --lt-gray: #eaeaea;
     --med-gray: #555;
     --dk-gray: #222;
 
-    /* Colors from Huemint.com */
-    --hue-dk: #15242f;
-    --hue-lt: #dce6eb;
-    --hue-blue: #00aecf;
-    --hue-red: #fd4635;
-
-    --fonts: Arial, Verdana, sans-serif;
+    /* Fonts from Google Fonts, Pairing by FontJoy.com */
+    --heading-fonts: Scada, Verdana, sans-serif; /* 400 or 700 weight */
+    --body-fonts: Catamaran, Arial, Sans-serif; /* 100 - 900 weight */
 }
 
-/* ----- BODY STYLES ----- */
+/* BODY STYLES */
 body{
-    font-family: var(--fonts);
-    background-color: var(--hue-dk);
-    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='64' height='64' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%2315242f'/><path d='M32 64c0 17.674-14.326 32-32 32s-32-14.326-32-32 14.326-32 32-32 32 14.326 32 32zm64 0c0 17.674-14.326 32-32 32S32 81.674 32 64s14.326-32 32-32 32 14.326 32 32zm-32 0c0 17.674-14.326 32-32 32S0 81.674 0 64s14.326-32 32-32 32 14.326 32 32zM32 0c0 17.674-14.326 32-32 32S-32 17.674-32 0s14.326-32 32-32S32-17.674 32 0zm64 0c0 17.674-14.326 32-32 32S32 17.674 32 0s14.326-32 32-32S96-17.674 96 0zM64 0c0 17.674-14.326 32-32 32S0 17.674 0 0s14.326-32 32-32S64-17.674 64 0zM32 32c0 17.674-14.326 32-32 32s-32-14.326-32-32S-17.674 0 0 0s32 14.326 32 32zm64 0c0 17.674-14.326 32-32 32S32 49.674 32 32 46.326 0 64 0s32 14.326 32 32zm-32 0c0 17.674-14.326 32-32 32S0 49.674 0 32 14.326 0 32 0s32 14.326 32 32z'  stroke-width='0.5' stroke='%231c384e' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-84,-8)' fill='url(%23a)'/></svg>");
+    /* TO DO: In order to position some of our other elements on the page we will need to position the body first. Setting the position on an element to relative and not changing any other styles allows this without actually changing the position of the body */
+    position: relative;
+    font-family: var(--body-fonts);
+    color: var(--dk-gray);
     box-sizing: border-box;
-    font-size: 1.1rem;
     line-height: 1.35;
+    font-size: 1.1rem;
+    background-color: var(--off-wht);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23eeede7' fill-opacity='0.61'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
 }
 
-/* ----- SKIP LINK STYLES ----- */
-/* FROM WEB-AIM:  */
+/* SKIP LINK STYLES */
 #skip{
     position: absolute;
-    left: -10000px;
     top: auto;
+    left: -10000px;
     width: 1px;
     height: 1px;
     overflow: hidden;
@@ -91,160 +96,399 @@ body{
     position: static;
     width: auto;
     height: auto;
-    font-size: 1.2rem;
-    margin-bottom: 4px;
-}
-
-/* ----- HEADER/MAIN/FOOTER STYLES ----- */
-header, main, footer{
-    padding: 2rem 1rem;
-    width: calc(100% - 2rem);
-    max-width: calc(1100px - 2rem);
-    background-color: var(--lt-gray);
-    color: var(--hue-dk);
-    margin: 0 auto;
-}
-
-/* ----- HEADER/FOOTER STYLES ----- */
-header, footer{
-    text-align: center;
-    background-color: var(--hue-dk);
-    color: var(--hue-lt);
-}
-
-
-/* ----- HEADING STYLES ----- */
-h1, h2{
+    font-family: var(--body-fonts);
+    font-size: 1.5rem;
     font-weight: bold;
-    max-width: 45ch;
+    color: var(--dk-gray);
+    outline: 4px solid var(--red);
+    background: var(--off-wht);
+    margin-bottom: 6px;
+}
+
+/* HEADER/MAIN/FOOTER STYLES */
+header, main, footer{
+    background-color: var(--off-wht);
+    padding: 1rem;
+    max-width: calc(1000px - 2rem);
+    margin: 0 auto;
+    border-right: 1px solid var(--lt-gray);
+    border-left: 1px solid var(--lt-gray);
+}
+
+main{
+    background-color: var(--off-wht);
+    background-image: url("images/green-dust-and-scratches.png");
+}
+
+footer{
+    padding: 3rem 1rem;
+    text-align: center;
+}
+    
+    /* HEADING STYLES */
+h1, h2, h3{
+    font-family: var(--heading-fonts);
+    font-weight: 700;
+    text-align: center;
 }
 
 h1{
-    font-size: 3rem;
-    margin: 12px auto 32px;
+    font-size: 2.5rem;
+    margin: 0.75em 0;
 }
 
 h2{
-    font-size: 1.75rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 2rem;
+    margin: 0.75em 0;
 }
 
-/* ----- DECORATIVE SVG IN H2 STYLES ----- */
-h2 svg{
-    stroke: var(--hue-red);
+h3{
+    font-size: 1.5rem;
+    margin: 0;
 }
 
-/* ----- LINK STYLES ----- */
+/* LINK STYLES */
 a{
-    /* color: var(--wht); */
-    color: var(--hue-lt);
     display: block;
-    padding: 16px;
-    text-decoration-thickness: 4px;
-    transition: all 500ms;
-}
-
-p > a{
-    display: inline;
-    padding: 0;
-    text-decoration-thickness: 3px;
-    color: var(--hue-dk);
+    padding: 1rem;
+    text-decoration-thickness: 2px;
+    color: var(--dk-gray);
+    text-decoration-color: var(--sky);
 }
 
 a:hover{
-    text-decoration-color: var(--hue-red);
+    text-decoration-color: var(--gold);
 }
 
 a:focus{
-    outline: 4px solid var(--hue-blue);
+    outline: 2px solid var(--blue);
     outline-offset: 2px;
-    text-decoration-color: var(--hue-red);
 }
 
-/* ----- NAV STYLES ----- */
+/* NAVIGATION STYLES */
+nav{
+    text-align: center;
+}
+
 nav a{
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: var(--hue-lt);
-    color: var(--hue-dk);
-    border: 6px solid var(--hue-lt);
-    border-radius: 32px;
-    text-decoration: none;
-    max-width: calc(350px - 44px);
-    margin: 16px auto;
-    transition: all 500ms;
+	text-decoration: none;
+	font-size: 1.35rem;
+	font-weight: 600;
+	background-color: var(--blue);
+    color: var(--off-wht);
+    margin: 1rem auto;
+    max-width: calc(250px - 2rem);
 }
 
 nav a:hover{
-    border-color: var(--hue-red);
+    background-color: var(--sky);
+    color: var(--dk-gray);
 }
 
 nav a:focus{
-    box-shadow: 0 0 0 10px var(--hue-red);
-    outline-offset: 0;
+    outline: 4px solid var(--red);
+    outline-offset: 2px;
 }
 
-/* ----- SECTION STYLES ----- */
-section{
-    margin: 32px 0;
-}
-
-/* ----- DECORATIVE DIV STYLES ----- */
-.divider{
-    height: 12px;
+/* IMAGE STYLES */
+img{
+    display: block;
     width: 100%;
-    background-image: url("images/sparkle.svg");
-    background-size: contain;
-    background-position: center;
-}
-
-/* ----- CODE STYLES ----- */
-pre{
-    padding: 0 16px;
-    width: calc(100% - 32px);
-    max-width: calc(550px - 32px);
-    overflow-x: scroll;
-    margin: 32px auto;
-    background-color: var(--med-gray);
-    color: var(--hue-lt);
-}
-
-pre code{
-    padding: 0 12px;
-}
-
-code{
-    font-family: monospace;
-}
-
-/* ----- TEXT STYLES ----- */
-p{
-    padding: 16px 0;
-    width: 100%;
-    max-width: 65ch;
+    height: auto;
     margin: 0 auto;
 }
 
-strong{
-    font-weight: bold;
-    text-decoration: 4px solid underline var(--hue-red);
+/* TEXT STYLES */
+p{
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0.5rem 0;
 }
 
-/* ----- MEDIA QUERY - SMALL/MEDIUM SCREENS ----- */
-@media screen and (min-width: 550px){
+/* NOTIFICATIONS SECTION IN HEADER */
+#notifications{
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#notifications button{
+    border: none;
+    background-color: var(--off-wht);
+    padding: 16px;
+    height: 76px;
+    width: 76px;
+    margin: 0 6px;
+    outline: 4px solid var(--off-wht);
+    outline-offset: 2px;
+    /* This is a CSS special effect that slows down the transition between states */
+    transition: all 300ms;
+}
+
+#notifications svg{
+    stroke: var(--blue);
+    height: 44px;
+    width: 44px;
+}
+
+#notifications span{
+    display: block;
+    font-size: 1.1rem;
+    /* TO DO: This span is a red dot that indicates that the user has a notification (an unread message) we need to position it so that it displays 45 pixels above and 30 pixels to the left of its normal position on the page */
+    
+    font-weight: 600;
+    background-color: var(--red);
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+#notifications span.none{
+    display: none;
+}
+
+#notifications button:hover{
+    background-color: var(--blue);
+    border-radius: 50%;
+}
+
+#notifications button:hover svg{
+    stroke: var(--off-wht);
+}
+
+#notifications button:focus{
+    outline-color: var(--red);
+}
+
+/* CONTAINER STYLES */
+main > section{
+    padding: 2rem 0;
+}
+
+/* FRIENDS SECTION STYLES */
+#friends section{
+    max-width: 300px;
+    margin: 2rem auto;
+}
+
+#friends h3{
+    padding: 8px 0;
+    background-color: var(--sky);
+    margin: 1rem auto;
+}
+
+#friends button.star{
+    background-color: var(--off-wht);
+    border: none;
+    height: 40px;
+    width: 40px;
+    /* TO DO: These stars show whether a friend is on the user's list of favorites. We want to position it so that it displays 25 pixels above and 175 pixels to the left of its normal position on the page */
+    
+    border: 1px solid var(--lt-gray);
+}
+
+#friends button.star svg{
+    stroke: var(--gold);
+    fill: var(--off-wht);
+}
+
+#friends button.star:hover svg{
+    fill: var(--gold);
+    stroke: var(--gold);
+}
+
+#friends button.fav.star svg{
+    fill: var(--gold);
+    stroke: var(--gold);
+}
+
+#friends button.fav.star:hover svg{
+    stroke: var(--gold);
+    fill: var(--off-wht);
+}
+
+#friends button.star:focus{
+    outline: 4px solid var(--red);
+    outline-offset: 0;
+}
+
+#friends img{
+    width: 128px;
+    height: 128px;
+}
+
+#friends svg{
+    stroke: var(--red);
+}
+
+#friends p{
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+#friends div{
+    display: flex;
+    justify-content: space-around;
+}
+
+#friends button{
+    border: 2px solid var(--blue);
+    background-color: var(--blue);
+    padding: 8px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* This is a CSS special effect that slows down the transition between states */
+    transition: all 300ms;
+}
+
+#friends button svg{
+    stroke: var(--off-wht);
+    width: 38px;
+    height: 38px;
+}
+
+#friends button:hover{
+    background-color: var(--off-wht);
+}
+
+#friends button:hover svg{
+    stroke: var(--blue);
+}
+
+#friends button:focus{
+    outline: 4px solid var(--red);
+    outline-offset: 2px;
+}
+
+
+/* PHOTOS SECTION STYLES */
+#photos{
+    border-top: 4px solid var(--lt-gray);
+}
+
+#photos img{
+    max-width: 640px;
+    margin: 1rem auto;
+}
+
+/* BACK TO TOP LINK STYLES */
+#btt{
+    width: 44px;
+    height: 44px;
+    /* TO DO: A link back to the top of a longer page is commonly included near the lower right-hand corner of the page and it will stay in that location as the screen width changes. Use the calc function to move this element down by 100% of the viewport height minus 85 pixels, and to the right by 100% of the viewport width minus 100 pixels */
+    
+    background-color: var(--off-wht);
+    border-radius: 1rem;
+}
+
+#btt svg{
+    stroke: var(--sky);
+    width: 44px;
+    height: 44px;
+}
+
+#btt:hover{
+    background-color: var(--sky);
+}
+
+#btt:hover svg{
+    stroke: var(--off-wht);
+}
+
+#btt:focus{
+    outline: 4px solid var(--red);
+}
+
+@media screen and (min-width: 525px){
     nav ul{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 1.5rem 0;
+    }
+
+    nav a{
+        margin: 0;
     }
 }
 
-/* ----- MEDIA QUERY - LARGE SCREENS ----- */
-@media screen and (min-width: 900px){
+@media screen and (min-width: 675px){
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem 5rem;
+    }
+
+    h1{
+        margin: 0;
+    }
+
     nav ul{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 0;
+    }
+
+    #notifications{
+        margin: 0;
+    }
+
+    #friends{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 24px;
+    }
+
+    #friends h2{
+        flex-basis: 100%;
+    }
+
+    #friends section{
+        min-width: 275px;
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+
+    #friends h3{
+        margin-top: 0;
+    }
+
+    #photos{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #photos h2{
+        flex-basis: 100%;
+    }
+
+    #photos img{
+        width: 45%
+    }
+}
+
+@media screen and (min-width: 950px){
+    header{
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        justify-content: space-between;
+        border-bottom: 4px solid var(--lt-gray);
+    }
+
+    footer{
+        border-top: 4px solid var(--lt-gray);
     }
 }
